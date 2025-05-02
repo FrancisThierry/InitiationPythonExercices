@@ -1,0 +1,27 @@
+marque,bonus,prixHT
+Ford BMax,5,1200,2025-02-02
+Ford CMax,5,120550,2025-01-02
+Fiat Uno,5,124400,2025-05-02
+Toyota Corolla,3,15000,2025-03-15
+Honda Civic,4,18000,2025-06-10
+Chevrolet Spark,2,12000,2025-07-20
+Volkswagen Golf,5,22000,2025-08-25
+BMW X3,6,45000,2025-09-30
+Audi A4,5,40000,2025-10-05
+Mercedes-Benz C-Class,7,50000,2025-11-15
+Hyundai Elantra,3,17000,2025-12-20
+Kia Soul,4,19000,2026-01-10
+Nissan Altima,3,21000,2026-02-05
+Mazda CX-5,5,28000,2026-03-15
+Subaru Outback,4,30000,2026-04-10
+Jeep Wrangler,6,35000,2026-05-20
+Tesla Model 3,8,45000,2026-06-25
+Volvo XC60,7,48000,2026-07-30
+Porsche Cayenne,9,70000,2026-08-15
+Lexus RX,6,52000,2026-09-10
+Jaguar F-Pace,8,60000,2026-10-05
+Land Rover Discovery,7,65000,2026-11-20
+Peugeot 208,3,16000,2026-12-15
+Renault Clio,3,15000,2027-01-10
+Citroën C3,3,14000,2027-02-05
+Opel Astra,4,18000,2027-03-20
