@@ -15,7 +15,7 @@ class Car():
         self.price = price
         self.creationDate = creationDate
 
-    def is2ndTrimester(self) -> bool:
+    def is2ndQuarter(self) -> bool:
         month = self.creationDate.month
         return month >= 4 and month <= 6
 
@@ -56,7 +56,7 @@ def writeCars(cars: list[Car], outDir: str) -> None:
     makes = set()  # type: set[str]
 
     for car in cars:
-        if not car.is2ndTrimester():
+        if not car.is2ndQuarter():
             continue
 
         make = car.make
