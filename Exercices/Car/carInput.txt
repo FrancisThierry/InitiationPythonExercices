@@ -1,4 +1,4 @@
-marque,bonus,prixHT
+marque,bonus,prixHT,dateModele
 Ford BMax,5,1200,2025-02-02
 Ford CMax,5,120550,2025-01-02
 Fiat Uno,5,124400,2025-05-02
