@@ -1,0 +1,37 @@
+classDiagram
+class Vehicule {
+    -string brand
+    -string model
+    -int year
+    -float price
+    +void start()
+    +void stop()
+    +void accelerate()
+    +void brake()
+
+}
+class Garage {
+    -List~Car~ cars
+}
+
+class ShowRoom {
+    -List~Car~ cars
+}
+
+class Car {
+   
+}
+class Sales {
+   
+}
+class Customer {
+   
+}
+
+
+Vehicule <|-- Car
+ShowRoom --> Car
+Sales --> Car
+Garage --> Car
+Sales --> Customer 
+
