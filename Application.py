@@ -1,4 +1,4 @@
-from Exercices.PythonObjet.Helpers import TvaHelper
+from Exercices.PythonObjet.modele.Bike import Bike
 from Exercices.PythonObjet.modele.Car import Car
 from Exercices.PythonObjet.PublicRelation.Car import Car as PublicCar   
 
@@ -12,7 +12,69 @@ class Application:
 
     def run(self):
         print(f"Lancement de {self.name}...")
+# définition des espaces de vente et de réparation
+        garage, showroom = self.SpaceDefinition()
 
+        # creation d'un vélo
+        print("Création d'un vélo")
+        bike = Bike("Giant", "Escape 3", 2022)
+        bike.annee = 2022
+        bike.modele = "Escape 3"
+        print(f"Vélo créé : {bike}")
+        
+
+
+        print("Création d'une voiture")
+        corolla = Car("Toyota", "Corolla", 2020)
+        print(f"Voiture créée : {corolla}")
+
+        # creation d'une liste de véhicules
+        vehicles = []
+        vehicles.append(corolla)
+        vehicles.append(bike)
+
+        
+
+        for vehicle in vehicles:
+            print(f"Véhicule  {type(vehicle)} : {vehicle.getWeelsNeeded()} roues ")
+
+
+
+
+        # corolla.mileage = 15000
+        # corolla.price = 20000
+        # print(f"Voiture mise à jour : {corolla}")
+        # tesla = Car("Tesla", "Model S", 2021)
+        # print(f"Voiture créée : {tesla}")
+        # tesla.mileage = 5000
+        # tesla.price = 80000     
+        # print(f"Voiture mise à jour : {tesla}")
+
+        # print("Ajout de la voiture au garage")
+        # garage.add_car(corolla)
+
+        # print(f"Voiture ajoutée au garage : {corolla}")
+        # print("Ajout de la voiture à la salle d'exposition")
+        # showroom.add_car(tesla)
+        # print(f"Voiture ajoutée à la salle d'exposition : {tesla}")
+        # print("Création d'un client")
+        # customer = Customer("Dupont", "test@domain.com", "Pierre")
+        # print(f"Client créé : {customer.name}")
+
+        # print("Création d'une vente")
+        # sale = Sales(tesla, 20000, "2023-10-01", customer)
+        # print(f"Vente créée : {sale}")
+        # print("retrait de la voiture du showroom")
+        # showroom.remove_car(tesla)
+        # print(f"Voiture retirée de la salle d'exposition : {tesla}")
+
+        # # Saisie d'une voiture à vendre
+        # print("Création d'une voiture à vendre")
+
+        # golf = self.fillCar()
+        # print(f"Voiture à vendre créée : {golf}")
+
+    def SpaceDefinition(self):
         print("Création du garage")
         garage = Garage("Garage de la ville", 50)
 
@@ -21,42 +83,7 @@ class Application:
         print("Création de la salle d'exposition")
 
         print(f"Salle d'exposition créée avec une capacité de {ShowRoom.maxCapacity} voitures.")
-        print("Création d'une voiture")
-        corolla = Car("Toyota", "Corolla", 2020)
-        print(f"Voiture créée : {corolla}")
-
-        corolla.mileage = 15000
-        corolla.price = 20000
-        print(f"Voiture mise à jour : {corolla}")
-        tesla = Car("Tesla", "Model S", 2021)
-        print(f"Voiture créée : {tesla}")
-        tesla.mileage = 5000
-        tesla.price = 80000     
-        print(f"Voiture mise à jour : {tesla}")
-
-        print("Ajout de la voiture au garage")
-        garage.add_car(corolla)
-
-        print(f"Voiture ajoutée au garage : {corolla}")
-        print("Ajout de la voiture à la salle d'exposition")
-        showroom.add_car(tesla)
-        print(f"Voiture ajoutée à la salle d'exposition : {tesla}")
-        print("Création d'un client")
-        customer = Customer("Dupont", "test@domain.com", "Pierre")
-        print(f"Client créé : {customer.name}")
-
-        print("Création d'une vente")
-        sale = Sales(tesla, 20000, "2023-10-01", customer)
-        print(f"Vente créée : {sale}")
-        print("retrait de la voiture du showroom")
-        showroom.remove_car(tesla)
-        print(f"Voiture retirée de la salle d'exposition : {tesla}")
-
-        # Saisie d'une voiture à vendre
-        print("Création d'une voiture à vendre")
-
-        golf = self.fillCar()
-        print(f"Voiture à vendre créée : {golf}")
+        return garage,showroom
 
 
         
