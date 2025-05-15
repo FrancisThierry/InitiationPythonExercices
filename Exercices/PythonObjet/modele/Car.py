@@ -1,12 +1,12 @@
 from uuid import uuid4
 
+from Exercices.PythonObjet.modele.Abstraction import BaseVehicule
 
-class Car:
+
+class Car(BaseVehicule):
     def __init__(self, brand, model, year):
+        super().__init__(brand, model, year)
         self.__id = uuid4()
-        self.__brand = brand
-        self.__model = model
-        self.__year = year
         self.__mileage = 0
         self.__price = 0.0  
         self.__is_sold = False
@@ -30,3 +30,9 @@ class Car:
     @property
     def description(self):
         return f"{self.__year} {self.__brand} {self.__model} {self.__energyType}"
+    
+    def getWeelsNeeded(self):
+        """
+        retourne le nombre de roues.
+        """
+        return 4

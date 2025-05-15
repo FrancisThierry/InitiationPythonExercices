@@ -10,7 +10,7 @@ Créer les classes permettant de representer le SI (Système d'information) de S
 ## Héritage
 La société SecondHandCar décide de vendre et de réparer des vélos et des Scooters. 
 - Pour les vélos son espace est de 20 places et pour les scooters de 10 places. 
-- Pour les réparations, son espace pour les scooters dispose de 10 places et son espace pour les réparations de 7 places.
+- Pour les réparations, son espace pour les scooters dispose de 10 places et son espace pour les réparations de vélos de 7 places.
 
 ### Exercice
 Créer les classes permettant de representer le SI (Système d'information) de SecondHandCar avec ce nouveau dispositif en essayant de respecter les principes Solides et l'héritage.
