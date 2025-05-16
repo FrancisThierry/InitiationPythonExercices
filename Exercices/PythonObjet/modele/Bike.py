@@ -1,4 +1,4 @@
-from Exercices.PythonObjet.modele.Abstraction.BaseVehicule import BaseVehicule
+from exercices.pythonObjet.modele.abstraction.base_vehicule import BaseVehicule
 
 
 class Bike(BaseVehicule):

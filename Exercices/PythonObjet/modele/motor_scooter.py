@@ -1,4 +1,6 @@
-from Exercices.PythonObjet.modele.Abstraction import BaseVehicule
+from exercices.pythonObjet.modele.abstraction.base_vehicule import BaseVehicule
+
+
 class MotorScooter(BaseVehicule):
     """
     Classe représentant un scooter à moteur.

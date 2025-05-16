@@ -1,6 +1,6 @@
 from uuid import uuid4
 
-from Exercices.PythonObjet.modele.Abstraction.BaseVehicule import BaseVehicule
+from exercices.pythonObjet.modele.abstraction.base_vehicule import BaseVehicule
 
 
 class Car(BaseVehicule):

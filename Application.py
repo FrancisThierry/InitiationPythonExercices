@@ -1,14 +1,42 @@
-from Exercices.PythonObjet.modele.Bike import Bike
-from Exercices.PythonObjet.modele.Car import Car
-from Exercices.PythonObjet.PublicRelation.Car import Car as PublicCar   
+from exercices.pythonObjet.modele.bike import Bike
+from exercices.pythonObjet.modele.car import Car
+import pandas as pd
+from exercices.pythonObjet.dataManagement.pandas_car_managent import PandaCarManagement
 
-from Exercices.PythonObjet.modele.Customer import Customer
-from Exercices.PythonObjet.SecondHandCar.Garage.Garage import Garage
-from Exercices.PythonObjet.SecondHandCar.Sales.Sales import Sales
-from Exercices.PythonObjet.SecondHandCar.ShowRoom.ShowRoom import ShowRoom
+from exercices.pythonObjet.modele.customer import Customer
+from exercices.pythonObjet.secondHandCar.garage import Garage
+from exercices.pythonObjet.secondHandCar.sales import Sales
+from exercices.pythonObjet.secondHandCar.showRoom import ShowRoom
 class Application:
     def __init__(self, name):
         self.name = name
+
+    def testPandaCars(self):
+        """
+        Test de la classe PandaCarManagement.
+        """
+        dfCar = pd.read_csv(r"C:\data\datasets\cars.csv")
+        car_manager = PandaCarManagement(dfCar)
+
+        try:
+        # ajout d'une voiture
+            car_manager.add(Car("DeLorean", "RVF", 2020))
+        except Exception as e:
+            print(f"Erreur lors de l'ajout de la voiture : {e}")
+
+
+        data = car_manager.getByName("DeLorean")
+
+        for car in data:
+            print(f"Car Name: {car.marque}, Model: {car.modele}, Year: {car.annee}")
+            # car_manager.add(car)
+            # car_manager.remove(car)
+            # car_manager.update(car)
+        # print(data)
+        # car_manager.add("Toyota", "Corolla", 2020)
+        # car_manager.add("Honda", "Civic", 2019)
+        # print(car_manager.get())
+        # print(car_manager.getByName("Toyota"))
 
     def run(self):
         print(f"Lancement de {self.name}...")
@@ -108,7 +136,7 @@ class Application:
 
 def main():
     app = Application("Programme de gestion de garage")
-    app.run()
+    app.testPandaCars()
 
 if __name__ == "__main__":
     main()
