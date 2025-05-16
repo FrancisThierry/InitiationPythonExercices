@@ -14,3 +14,10 @@ La société SecondHandCar décide de vendre et de réparer des vélos et des Sc
 
 ### Exercice
 Créer les classes permettant de representer le SI (Système d'information) de SecondHandCar avec ce nouveau dispositif en essayant de respecter les principes Solides et l'héritage.
+
+### Exercice
+
+A partir du dataset fourni. Ecrire le code permettant de gérer 
+l'ajout, la modification, la supression, la recherche de voitures d'occasion en utilisant pandas. Reprendre le code déjà réalisé avec l'héritage.
+
+Option Faire un code permettant de gérer ce CRUD par pandas comme par Sqlite, ou SqlServer.
