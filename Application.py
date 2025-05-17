@@ -1,34 +1,52 @@
+from exercices.pythonObjet.dataManagement.sql_server_database import SqlServerDatabase
+from exercices.pythonObjet.dataManagement.sqlite_database import SqliteDatabase
 from exercices.pythonObjet.modele.bike import Bike
 from exercices.pythonObjet.modele.car import Car
 import pandas as pd
-from exercices.pythonObjet.dataManagement.pandas_car_managent import PandaCarManagement
+from exercices.pythonObjet.dataManagement.pandas_car_management import PandaCarManagement
 
 from exercices.pythonObjet.modele.customer import Customer
 from exercices.pythonObjet.secondHandCar.garage import Garage
 from exercices.pythonObjet.secondHandCar.sales import Sales
 from exercices.pythonObjet.secondHandCar.showRoom import ShowRoom
+
+from exercices.pythonObjet.dataManagement.db_data_Processor import CarDataProcessor
 class Application:
     def __init__(self, name):
         self.name = name
+
+    def testSqlServer(self):        
+        sqlServerDb = SqlServerDatabase("localhost,1433", "CarDb", "sa", "Password123")
+        processor = CarDataProcessor(sqlServerDb)
+        cars = processor.get()
+
+    def testSqlite(self):
+        dataBasePath = r"C:\data\dataDBB\CarDb.db"
+        sqlite_db = SqliteDatabase(dataBasePath)
+        processor = CarDataProcessor(sqlite_db)
+        cars = processor.get()
+        for car in cars:
+            print(f"Car Name: {car.name}, Model: {car.year}")
 
     def testPandaCars(self):
         """
         Test de la classe PandaCarManagement.
         """
-        dfCar = pd.read_csv(r"C:\data\datasets\cars.csv")
+        filepath = r"C:\data\datasets\cars.csv"
+        dfCar = pd.read_csv(filepath)
         car_manager = PandaCarManagement(dfCar)
 
         try:
         # ajout d'une voiture
-            car_manager.add(Car("DeLorean", "RVF", 2020))
+            car_manager.add(Car("DeLorean", "RVF", 2020), filepath)
         except Exception as e:
             print(f"Erreur lors de l'ajout de la voiture : {e}")
 
-
+            
         data = car_manager.getByName("DeLorean")
 
         for car in data:
-            print(f"Car Name: {car.marque}, Model: {car.modele}, Year: {car.annee}")
+            print(f"Car Name: {car.marque}, Model: {car.modele}, Year: {car.year}")
             # car_manager.add(car)
             # car_manager.remove(car)
             # car_manager.update(car)
@@ -126,18 +144,17 @@ class Application:
         car_is_sold = input("La voiture est-elle vendue ? (oui/non) : ").lower() == "oui"
 
         new_car = Car(car_to_sell, car_model, car_year)
-        new_car.mileage = car_mileage
-        new_car.price = car_price
-        new_car.energyType = car_energy_type
-        new_car.isElectric = car_is_electric
-        new_car.is_sold = car_is_sold
+        new_car.km_driven = car_mileage
+        new_car.selling_price = car_price
+        new_car.fuel = car_energy_type
+        # new_car.isElectric = car_is_electric
+        # new_car.is_sold = car_is_sold
         return new_car
 
 
 def main():
     app = Application("Programme de gestion de garage")
-    app.testPandaCars()
-
+    app.testSqlite()
 if __name__ == "__main__":
     main()
 

@@ -13,10 +13,10 @@ class PandaCarManagement(BaseDataManager):
         self.data = dataFrame
 
         super().__init__()
-    def add(self, car:Car):
+    def add(self, car:Car, filePath=None):
         # ajout d'une voiture marque pour name
         self.FromCarToRow(car)
-        self.data.to_csv(r"C:\data\datasets\cars.csv", index=False)
+        self.data.to_csv(filePath, index=False)
         """ 
         Ajoute un véhicule au gestionnaire de données.
         :param car: Le véhicule à ajouter.
