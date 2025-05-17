@@ -45,7 +45,17 @@ class PandaCarManagement(BaseDataManager):
         Récupère tous les véhicules du gestionnaire de données.
         :return: Un DataFrame contenant tous les véhicules.
         """
-        return self.data
+        listCar = []
+
+        # cars = self.data[self.data["name"] == name]
+        cars = self.data
+        for index, row in cars.iterrows():
+            car = self.buildCar(row)
+            # car.mileage = row["mileage"]
+            # car.price = row["price"]
+            # car.energyType = row["energyType"]
+            listCar.append(car)
+        return listCar
     def getByName(self, name):
         """
         Récupère un véhicule par son nom.
@@ -65,7 +75,12 @@ class PandaCarManagement(BaseDataManager):
         return listCar
 
     def buildCar(self, row):
-        car = Car(row["name"], (str(row["name"]).split(' '))[1], row["year"])
+        car:Car = Car(name=row["name"], year=row["year"], price=row["selling_price"])
+        car.km_driven=row["km_driven"]
+        car.fuel=row["fuel"]
+        car.seller_type=row["seller_type"]
+        car.transmission=row["transmission"]
+        car.owner=row["owner"]
         return car
 
 

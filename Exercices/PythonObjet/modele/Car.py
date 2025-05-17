@@ -8,6 +8,7 @@ class Car(BaseVehicule):
         super().__init__(name, year, price)
         self.__id = uuid4()    
         self.__energyType = None
+        self._selling_price = price
    
     
     def getWeelsNeeded(self):

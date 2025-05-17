@@ -7,7 +7,7 @@ class DatabaseInterface(ABC):
         pass
 
     @abstractmethod
-    def query(self, sql):
+    def query(self, sql, params=None):
         pass
 
     @abstractmethod

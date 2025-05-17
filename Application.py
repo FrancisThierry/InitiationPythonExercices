@@ -15,15 +15,37 @@ class Application:
     def __init__(self, name):
         self.name = name
 
-    def testSqlServer(self):        
-        sqlServerDb = SqlServerDatabase("localhost,1433", "CarDb", "sa", "Password123")
+    def testSqlServer(self): 
+
+        # utilisation de sqlServerDb       
+        sqlServerDb = SqlServerDatabase("DESKTOP-NLDCTVE", "databaseCar")
         processor = CarDataProcessor(sqlServerDb)
-        cars = processor.get()
+
+        # utilisation de pandas
+        filepath = r"C:\data\datasets\cars.csv"
+        dfCar = pd.read_csv(filepath)
+        car_manager = PandaCarManagement(dfCar)
+
+        # parcours des voitures
+        carsFromPandas = car_manager.get()
+        for car in carsFromPandas:
+            print(f"Car Name: {car.name}, year: {car.year}")
+            # insertion avec sqlServerDb
+            processor.add(car)
+
+
+
+
+        # cars = processor.get()
 
     def testSqlite(self):
         dataBasePath = r"C:\data\dataDBB\CarDb.db"
         sqlite_db = SqliteDatabase(dataBasePath)
         processor = CarDataProcessor(sqlite_db)
+
+
+
+        
         cars = processor.get()
         for car in cars:
             print(f"Car Name: {car.name}, Model: {car.year}")
@@ -154,7 +176,8 @@ class Application:
 
 def main():
     app = Application("Programme de gestion de garage")
-    app.testSqlite()
+    # app.testSqlite()
+    app.testSqlServer()
 if __name__ == "__main__":
     main()
 
