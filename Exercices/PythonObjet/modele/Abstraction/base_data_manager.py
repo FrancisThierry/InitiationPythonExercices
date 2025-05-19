@@ -39,3 +39,9 @@ class BaseDataManager(ABC):
         Get all data from the data manager.
         """
         pass
+    @abstractmethod
+    def getById(self):
+        """
+        Get one data from the data manager.
+        """
+        pass
