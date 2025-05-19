@@ -82,6 +82,13 @@ class PandaCarManagement(BaseDataManager):
         car.transmission=row["transmission"]
         car.owner=row["owner"]
         return car
+    
+    def getById(self, id):
+        raise NotImplementedError("La méthode getById n'est pas implémentée.")
+        return listCar
+    
+   
+
 
 
 
