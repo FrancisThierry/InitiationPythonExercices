@@ -10,7 +10,6 @@ class ClientReseau:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             s.connect((self.__host, self.__port))
             s.sendall(message.encode())
-            data = s.recv(1024)
             time.sleep(1)  # Pause de 1 seconde entre les envois
             
             

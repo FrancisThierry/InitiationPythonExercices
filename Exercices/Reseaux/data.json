@@ -4,3 +4,8 @@
 {"capteur": "capteur1", "temperature": 20}
 {"capteur": "capteur2", "temperature": 22.5}
 {"capteur": "capteur3", "temperature": 21.3}
+{"type": "test", "content": "Hello, World! 2"}
+{"type": "test", "content": "Hello, World! 3"}
+{"type": "test", "content": "Hello, World! 4"}
+{"type": "test", "content": "Hello, World! 1"}
+{"type": "test", "content": "Hello, World! 0"}
