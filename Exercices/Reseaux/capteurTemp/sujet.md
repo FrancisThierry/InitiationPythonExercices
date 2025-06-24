@@ -82,3 +82,33 @@ Proposez une extension de votre application orientée objet en utilisant l’hé
     - Créez une classe dérivée `ServeurTCP` qui hérite de `Serveur` et ajoute la gestion spécifique des messages JSON et de la sauvegarde des données.
 
 Expliquez brièvement l’intérêt de l’héritage dans ce contexte et documentez les classes créées.
+
+---
+
+## Extension : Gestion des threads et utilisation des classes
+
+### Objectif
+
+Adapter votre application orientée objet pour permettre la gestion simultanée de plusieurs connexions ou tâches grâce à l’utilisation des threads en Python.
+
+### Consignes
+
+- **Côté Serveur** :
+    - Modifiez la classe `ServeurTCP` pour qu’elle puisse gérer plusieurs clients en parallèle, chaque connexion étant traitée dans un thread distinct.
+    - Utilisez le module `threading` de Python pour lancer un nouveau thread à chaque connexion entrante.
+    - Assurez-vous que la sauvegarde des données est thread-safe (utilisez des verrous si nécessaire).
+
+- **Côté Client** :
+    - (Optionnel) Permettez l’envoi de plusieurs mesures en parallèle en utilisant des threads, par exemple pour simuler plusieurs capteurs.
+
+### Programme principal
+
+- Créez un programme principal (`main.py` ou intégré dans vos scripts existants) qui instancie les classes et lance les threads nécessaires.
+- Documentez la structure de votre programme principal et expliquez comment les threads sont créés et gérés.
+
+### Livrables supplémentaires
+
+- Code source modifié avec gestion des threads.
+- Documentation rapide expliquant l’organisation des classes et la gestion des threads.
+
+--- 
