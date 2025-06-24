@@ -47,3 +47,38 @@ Créer une application client-serveur en Python utilisant les sockets TCP pour t
 - `client.py`
 - `serveur.py`
 - Fichier de sauvegarde ou base de données
+
+---
+
+## Extension : Programmation Orientée Objet (POO)
+
+Réalisez une version orientée objet de l'application :
+### Par exemple
+
+- **Côté Client** :  
+    - Créez une classe `CapteurTCP` qui gère la connexion, la génération et l'envoi des données.
+    - La méthode principale doit permettre d'envoyer une mesure de température.
+
+- **Côté Serveur** :  
+    - Créez une classe `ServeurTCP` qui gère l'écoute, la réception et la sauvegarde des données.
+    - La méthode principale doit permettre de lancer le serveur et de traiter les connexions entrantes.
+
+**Livrables supplémentaires** :  
+- `client_poo.py`
+- `serveur_poo.py`
+- Documentation rapide des classes et méthodes utilisées.
+
+### Héritage
+#### Travail demandé
+
+Proposez une extension de votre application orientée objet en utilisant l’héritage :
+### Par exemple 
+- **Côté Client** :  
+    - Créez une classe de base `Capteur` qui contient les attributs et méthodes communs à différents types de capteurs (par exemple, identifiant, génération de mesure).
+    - Créez une classe dérivée `CapteurTCP` qui hérite de `Capteur` et ajoute les fonctionnalités liées à la connexion et à l’envoi via TCP.
+
+- **Côté Serveur** :  
+    - Créez une classe de base `Serveur` qui gère les fonctionnalités générales d’un serveur (écoute, gestion des connexions).
+    - Créez une classe dérivée `ServeurTCP` qui hérite de `Serveur` et ajoute la gestion spécifique des messages JSON et de la sauvegarde des données.
+
+Expliquez brièvement l’intérêt de l’héritage dans ce contexte et documentez les classes créées.
